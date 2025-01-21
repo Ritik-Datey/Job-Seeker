@@ -162,7 +162,7 @@
 <body>
     <div class="application-container">
         <h1>Job Application</h1>
-        <form>
+        <form action="addUserServlet" method="post">
             <!-- Prefix Dropdown and Name Fields -->
             <div class="name-prefix">
                 <select name="prefix" required style="float: left;">
@@ -209,7 +209,7 @@
                 <option value="PhD">PhD</option>
             </select>
 
-            <input type="text" id="field-of-study" name="field-of-study"
+            <input type="text" id="field-of-study" name="field_of_study"
                 placeholder="Field of Study  - e.g., Computer Science, Marketing" required>
 
             <input type="text" name="position" placeholder="Position Applying For" required>
@@ -225,7 +225,7 @@
 
             <textarea id="skills" name="skills" placeholder="List your skills (e.g., Java, React.js, Team Management)"
                 required></textarea>
-            <textarea name="coverLetter" rows="4" placeholder="Cover Letter" required></textarea>
+            <textarea name="coverLetter" rows="4" placeholder="Cover Letter" ></textarea>
             <input type="file" name="resume" accept=".pdf,.doc,.docx" style="width: auto;" required>
             <button type="submit">Submit Application</button>
 

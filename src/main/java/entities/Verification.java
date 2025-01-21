@@ -12,15 +12,18 @@ public class Verification {
     @Column(nullable = false)
     private String password;
 
- 
+    @OneToOne(mappedBy = "verification", cascade = CascadeType.ALL)
+    private UserDetails userDetails;
+    
     public Verification() {
     	
     }
     
-	public Verification(String email, String password) {
+	public Verification(String email, String password, UserDetails userDetails) {
 		super();
 		this.email = email;
 		this.password = password;
+		this.userDetails = userDetails;
 	}
 
 	public String getEmail() {
@@ -39,12 +42,19 @@ public class Verification {
 		this.password = password;
 	}
 
+	public UserDetails getUserDetails() {
+		return userDetails;
+	}
+
+	public void setUserDetails(UserDetails userDetails) {
+		this.userDetails = userDetails;
+	}
     
 	 @Override
 	    public String toString() {
 	        return "Example{" +
 	                "name='" + email + '\'' +
-	                ", password=" + password +
+	                ", age=" + password +
 	                '}';
 	    }
 
